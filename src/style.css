@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root{
+
+    /* text */
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* Background gradient */
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+
+    --white: #fff;
+
+    /* Dividers */
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100vw;
+}
+
+
+body{
+    
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+
+    background: linear-gradient(to bottom, var(--Soft-violet), var(--Soft-blue));
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wrap_all{
+
+    width: 100%;
+
+    margin: 150px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card_container{
+    position: relative;
+
+    width: 330px;
+    min-height: 540px;
+    padding: 140px 25px 0;
+
+    background-color: var(--white);
+
+    border-radius: 25px;
+
+}
+
+main{
+    position: relative;
+
+}
+
+.image{
+    
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    
+    position: absolute;
+    top: -105px;
+    left: -5px;
+
+}
+
+.box{
+    display: none;
+}
+
+.illustration_desktop{
+    display: none;
+    filter: drop-shadow(0 30px 0 rgba(0, 0, 0, 0.08));
+}
+
+.illustration_mobile{
+
+    display: block;
+    width: 230px;
+    height: 170px;
+    filter: drop-shadow(0 30px 0 rgba(0, 0, 0, 0.08));
+    
+}
+
+.faq_txt{
+    text-align: center;
+    color: var(--Very-dark-desaturated-blue);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.question_style{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.paragraph_style{
+
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 20px;
+    display: none;
+
+}
+
+@keyframes display_paragraph {
+    0%{transform: translate3d(0, -20px, 0);}
+    100%{transform: translate3d(0, 0, 0);}
+}
+
+@keyframes undisplay_paragraph {
+    0%{transform: translate3d(0, 0, 0); opacity: 100%;}
+    100%{transform: translate3d(0, -20px, 0); opacity: 0%;}
+}
+
+@keyframes unpadding {
+    
+}
+
+.tc_container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+@keyframes invert_arrow{
+
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(180deg);}
+    
+}
+
+@keyframes return_arrow{
+
+    0%{transform: rotate(180deg);}
+    100%{transform: rotate(0deg);}
+    
+}
+
+
+.container{
+
+    width: 100%;
+    height: 100%;
+    padding: 20px 0 20px;
+    border-bottom: 2px solid var(--Light-grayish-blue);
+
+}
+
+.container:hover{
+    cursor: pointer;
+}
+
+.container:hover .question_style{
+    color: var(--Soft-red);
+}
+
+
+.attribution { font-size: 11px; text-align: center; display: none;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 1000px) {
+
+    .wrap_all{
+        margin-top: 25px;
+    }
+    .card_container{
+        width: 80%;
+        max-width: 920px;
+        max-height: 510px;
+        margin: 0 100px 0;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: flex-start;
+
+        padding-top: 70px;
+        padding-right: 8vw;
+        padding-left: 0;
+        padding-bottom: 25px;
+        
+    }
+
+    .image{
+
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top: 0;
+        
+    }
+
+    .illustration_desktop{
+        
+        width: 440px;
+        max-height: 350px;
+        z-index: 1;
+        display: block;
+        position: absolute;
+        top: 70px;
+        left: -90px;
+        
+    }
+
+    .box{
+
+        z-index: 3;
+        display: block;
+        position: absolute; 
+        left: -120px;
+        top: 200px;
+    }
+
+    .illustration_mobile{
+        display: none;
+    }
+
+    main{
+        width: 50%;
+    }
+
+}
